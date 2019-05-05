@@ -54,21 +54,20 @@ public class Steps {
 
     @When ("^I click the link with id \\\"(.*)\\\" $")
     public void whenIClickTheLink(String text) {
-        // this line tells the ChromeDriver to direct its chrome instance to http://localhost:8080/
-        driver.navigate().to("http://localhost:8080/");
+
+        driver.findElement(By.linkText(text)).click();
     }
     @Then ("^The JSON returned has the message \\\"(.*)\\\" $")
     public void thenJSONMessageReturned(String text) {
-        // By is really helpful, and has multiple ways of selecting elements (id, class, selector, xpath, etc.)
-        String output = driver.findElement(By.id("helloId")).getText();
+
+        String output = driver.findElement(By.id("/msg")).getText();
         Assert.assertEquals(text, output);
     }
 
     @Then ("^I am taken to the hello subpage$")
     public void thenIAmTakenToHelloSubpage() {
-        // By is really helpful, and has multiple ways of selecting elements (id, class, selector, xpath, etc.)
-        String output = driver.findElement(By.id("helloId")).getText();
-        //Assert.assertEquals(text, output);
+        String url = driver.getCurrentUrl();
+        Assert.assertEquals("http://localhost:8080/hello", url);
     }
 
 
