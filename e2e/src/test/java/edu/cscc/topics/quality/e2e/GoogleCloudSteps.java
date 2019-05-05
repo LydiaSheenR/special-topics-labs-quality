@@ -19,7 +19,7 @@ public class GoogleCloudSteps {
     }
 
     @Given("^I am on the Google Cloud homepage$")
-    public void givenIAmOnHelloWorldHomepage(){
+    public void givenIAmOnGoogleCloudHomepage(){
         driver.navigate().to("https://cloud.google.com");
     }
 
@@ -29,7 +29,7 @@ public class GoogleCloudSteps {
         driver.findElement(By.linkText("Blog")).click();
     }
     @Then("^I am taken to the Google Cloud Blog page$")
-    public void thenIAmTakenToHelloSubpage() {
+    public void thenIAmTakenToGoogleCloudBlogPage() {
         String url = driver.getCurrentUrl();
         Assert.assertEquals("https://cloud.google.com/blog/", url);
     }
