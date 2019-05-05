@@ -24,7 +24,7 @@ public class GoogleCloudSteps {
     }
 
     @When("^I click the Blog link$")
-    public void whenIClickTheLink(String text) {
+    public void whenIClickTheBlogLink() {
 
         driver.findElement(By.linkText("Blog")).click();
     }
