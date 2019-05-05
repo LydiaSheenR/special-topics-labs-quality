@@ -46,7 +46,8 @@ public class SampleAssertJTest {
         /* See how your IDE can help: uncomment the line below
            and hit <CTRL>-<ENTER> and see how it helps with
            command completion */
-        //assertThat(strings).con
+        assertThat(strings).contains("a", "b", "c");
+
 
         /* Compare error output of the two tests below, by uncommenting and running them one at a time */
 
