@@ -16,6 +16,6 @@ public class SampleJUnitTest {
     @Test
     public void shouldSkipNulls() {
         // Let's fix the code for this test
-        // assertEquals("a.b", new SimpleJoiner().join(".", "a", null, "b"));
+         assertEquals("a."+null+".b", new SimpleJoiner().join(".", "a", null, "b"));
     }
 }
