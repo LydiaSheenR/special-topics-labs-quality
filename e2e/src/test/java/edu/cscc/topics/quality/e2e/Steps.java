@@ -52,12 +52,12 @@ public class Steps {
         driver.navigate().to("http://localhost:8080/");
     }
 
-    @When ("^I click the link with id \\\"(.*)\\\" $")
+    @When ("^I click the link with id \\\"(.*)\\\"$")
     public void whenIClickTheLink(String text) {
 
         driver.findElement(By.linkText(text)).click();
     }
-    @Then ("^The JSON returned has the message \\\"(.*)\\\" $")
+    @Then ("^The JSON returned has the message \\\"(.*)\\\"$")
     public void thenJSONMessageReturned(String text) {
 
         String output = driver.findElement(By.id("/msg")).getText();
