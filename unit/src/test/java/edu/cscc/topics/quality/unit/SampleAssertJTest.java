@@ -46,16 +46,17 @@ public class SampleAssertJTest {
         /* See how your IDE can help: uncomment the line below
            and hit <CTRL>-<ENTER> and see how it helps with
            command completion */
-        //assertThat(strings).con
+        assertThat(strings).contains("a", "b", "c");
+
 
         /* Compare error output of the two tests below, by uncommenting and running them one at a time */
 
         // JUnit isn't too bad.  Clearly shows Expected vs. Actual (it gets more opaque with more complex examples)
-        //assertEquals(1, strings.size());
+        assertEquals(3, strings.size());
 
         // AssertJ output is pretty specific, including the value of strings itself so you can see what was gong on
         // Uncomment and run this test to see what I mean
-        // assertThat(strings).hasSize(1);
+        assertThat(strings).hasSize(3);
 
 
     }

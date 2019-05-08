@@ -1,6 +1,7 @@
 package edu.cscc.topics.quality.e2e;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
@@ -45,4 +46,29 @@ public class Steps {
         String output = driver.findElement(By.id("helloId")).getText();
         Assert.assertEquals(text, output);
     }
+
+    @Given("^I am on the Hello World homepage$")
+    public void givenIAmOnHelloWorldHomepage(){
+        driver.navigate().to("http://localhost:8080/");
+    }
+
+    @When ("^I click the link with id \\\"(.*)\\\"$")
+    public void whenIClickTheLink(String text) {
+
+        driver.findElement(By.id(text)).click();
+    }
+    @Then ("^The JSON returned has the message \\\"(.*)\\\"$")
+    public void thenJSONMessageReturned(String text) {
+
+        String output = driver.findElement(By.id("/msg")).getText();
+        Assert.assertEquals(text, output);
+    }
+
+    @Then ("^I am taken to the hello subpage$")
+    public void thenIAmTakenToHelloSubpage() {
+        String url = driver.getCurrentUrl();
+        Assert.assertEquals("http://localhost:8080/hello", url);
+    }
+
+
 }
